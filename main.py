@@ -1,6 +1,6 @@
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
-
+import json
 
 directorio_credencial = './config/credentials_module.json'
 
@@ -22,6 +22,7 @@ def login():
 def descargar_archivo(query,ruta_descarga):
 
     #Credenciales
+    resultado = {}
     resultado = []
     credenciales = login()
 
@@ -30,10 +31,10 @@ def descargar_archivo(query,ruta_descarga):
     #Ciclo que recorre nombre de fotos que cumplan con la query
     for f in lista_archivos:
         try:
-            print('Nombre del archivo:',f['id'])
-            print('Nombre del archivo:',f['title'])
-            print('Fecha de creacion:',f['createdDate'])
-            print('Fecha de creacion:',f['embedLink'])
+            print('Id',f['id'])
+            print('title',f['title'])
+            print('Create Date',f['createdDate'])
+            print('Link',f['embedLink'])
             resultado.append(f)        
 
             #Descargar foto por su id
@@ -43,6 +44,11 @@ def descargar_archivo(query,ruta_descarga):
 
         except:
             pass
+
+    #Exportando archivo json con información de las fotos
+    with open('./data/data.json', 'w') as file:
+        json.dump(resultado, file, indent=4)
+
 
     return resultado
 
