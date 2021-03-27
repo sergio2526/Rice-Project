@@ -33,8 +33,6 @@ def descargar_archivo(query,ruta_descarga):
         try:
             print('Id',f['id'])
             print('title',f['title'])
-            print('Create Date',f['createdDate'])
-            print('Link',f['embedLink'])
             resultado.append(f)        
 
             #Descargar foto por su id
@@ -55,5 +53,5 @@ def descargar_archivo(query,ruta_descarga):
 
 if __name__ == "__main__":
     #Metodo con su respectiva query
-    descargar_archivo("title contains 'rice'","./images/")
+    descargar_archivo("title contains 'IMG_202'","./images/")
 
