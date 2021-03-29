@@ -52,7 +52,7 @@ def descargar_archivo(query,ruta_descarga):
     return resultado
 
 
-#Listar imagenes de la darpeta prueba
+#Listar imagenes de la carpeta prueba
 def listar_imagenes():
     
     im_dir = './images'
