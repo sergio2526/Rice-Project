@@ -90,7 +90,7 @@ def recortar_imagenes(image_path, im):
 if __name__ == "__main__":
 
     #Metodo con su respectiva query
-    #descargar_archivo("title contains 'pepito'","./prueba/")
+    #descargar_archivo("title contains 'IMG_202'","./images/")
     #Listar imagenes de la carpeta prueba
     listar_imagenes()
 
